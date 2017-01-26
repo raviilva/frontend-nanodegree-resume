@@ -15,7 +15,6 @@ The <head> of a website generally links to important resources the page will
 need to load. You'll see a lot of <link>s to CSS files for styles and
 <scripts> for JavaScript files to build interactions.
 -->
-<html>
 <head>
   <!-- This tells the browser how to read the document. -->
   <meta charset="utf-8">
@@ -26,7 +25,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Ilva's Resume</title>
 
   <!-- Load the page styles. -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
   <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  
 
 
 
@@ -35,7 +37,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <!-- You'll be deleting this line in the course -->
 
     <!--
@@ -44,30 +46,53 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-  <div class="row">
-    <div class="col-md-6">
-    <div id="header" class="center-content clear-fix">
+  <div class-"row">  
+    <div class="col-md-12"> 
+     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
-    <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
     </div>
+  </div> 
+  <div class-"row">   
+    <div class="col-md-12"> 
+      <div style="clear: both;"></div>
+        <div id="workExperience" class="gray">
+         <h2>Work Experience</h2>
+        </div>
+    </div> 
+  </div>  
+  <div class="row">
+    <div class="col-md-6">
     <div id="projects">
       <h2>Projects</h2>
+     </div> 
     </div>
-    <div id="education" class="gray">
+    <div class="col-md-6">
+    <div id="education">
       <h2>Education</h2>
     </div>
+  </div>
+   </div> 
+  
+  <div class="row">
+    <div class="col-md-12">  
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
     </div>
   </div>
+ 
+ <div class="row">  
+    <div class="col-md-12">   
+      <div id="lets-connect" class="dark-gray">
+       <h2 class="orange center-text">Let's Connect</h2>
+         <ul id="footerContacts" class="flex-box">
+       </ul>
+      </div>
+    <div class="col-md-12"> 
+ </div>     
+  </div>
+</div>
   
 
   <!-- "HTML is loaded by the browser in the order it appears in the file. If the JavaScript is loaded first and it is supposed to affect the HTML below it, it might not work, as the JavaScript would be loaded before the HTML it is supposed to work on. Therefore, putting JavaScript near the bottom of the HTML page is often the best strategy."
@@ -147,5 +172,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('mapDiv').style.display = 'none';
     }
   </script>
+ </div> 
 </body>
 </html>
+  
