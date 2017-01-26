@@ -13,7 +13,7 @@ var bio = {
   "skills": [
     "HTML", "CSS", "JavaScript", "Responsive Design", "Bootstrap"
   ],
-  "biopic": "images/Ilva.jpg"W
+  "biopic": "images/Ilva.jpg"
 };
 
 bio.display = function() {
@@ -54,11 +54,6 @@ bio.display = function() {
   formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
   $("#skills").append(formattedSkill);
 
-)}
-
-};
-
-
 
 var education = {
   "schools": [
@@ -90,7 +85,7 @@ var education = {
 
 education.display = function(){
   //for (var school in education.schools){ 
-  education.schools.for(function(school){ 
+  education.schools.forEach(function(school) { 
     $("#education").append(HTMLschoolStart);
     $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[school]["dates"]))
                   .append(HTMLschoolName.replace("%data%", education.schools[school]["name"]).replace("#", education.schools[school]["url"]))
@@ -98,14 +93,13 @@ education.display = function(){
                   .append(HTMLschoolDegree.replace("%data%", education.schools[school]["degree"]));
                                                       
     //for(var major in education.schools[school].majors){
-      school.majors.forEach(function(major) {
-      $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school]["majors"][major]));
-    });
-  }
-  $("#education").append(HTMLonlineClasses);
+  school.majors.forEach(function(major) {
+    $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school]["majors"][major]));
+
+    $("#education").append(HTMLonlineClasses);
   // Display online courses
   //for (var onlineCourse in education.onlineCourses){  
-   education.onlineCourses.for(function(onlineCourses){  
+   education.onlineCourses.forEach(function(onlineCourses){  
     var num = education.schools.length + parseInt(onlineCourse);
     $("#education").append(HTMLschoolStart);
     $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse]["dates"]))
@@ -114,7 +108,6 @@ education.display = function(){
                   .append(HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse]["url"]));
         });
     });
-};
 
 
 
@@ -192,8 +185,9 @@ projects.display = function() {
 
 $("#mapDiv").append(googleMap);
 
+// Call bio, work, projects and education functions
 bio.display();
-projects.display();
 work.display();
+projects.display();
 education.display();
 
