@@ -38,9 +38,10 @@ bio.display = function() {
 
   $("#topContacts").append(allContacts);
   $("#footerContacts").append(allContacts);
+};
 
 //if(bio.skills.length > 0) {
-  bio.skills.forEach(function(skill) {
+bio.skills.forEach(function(skill) {
   $("#header").append(HTMLskillsStart);
 
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -53,6 +54,7 @@ bio.display = function() {
   $("#skills").append(formattedSkill);
   formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
   $("#skills").append(formattedSkill);
+});
 
 
 var education = {
@@ -80,7 +82,7 @@ var education = {
       "url" : "https://www.udacity.com/"
     }
   ]
-}
+};
 
 
 education.display = function(){
@@ -91,7 +93,7 @@ education.display = function(){
                   .append(HTMLschoolName.replace("%data%", education.schools[school]["name"]).replace("#", education.schools[school]["url"]))
                   .append(HTMLschoolLocation.replace("%data%", education.schools[school]["location"]))
                   .append(HTMLschoolDegree.replace("%data%", education.schools[school]["degree"]));
-                                                      
+     });                                                 
     //for(var major in education.schools[school].majors){
   school.majors.forEach(function(major) {
     $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school]["majors"][major]));
@@ -108,6 +110,7 @@ education.display = function(){
                   .append(HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse]["url"]));
         });
     });
+};
 
 
 
@@ -132,7 +135,7 @@ var work = {
 
 work.display = function() {
 	//for(job in work.jobs) {
-   work.jobs.for(function(job){  
+   work.jobs.forEach(function(job){  
 		$("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -156,7 +159,7 @@ var projects = {
     "images": "images/Portfolio.jpg",
     "dates": "2016",
     "description": "Developed a personal portfolio page using HTML, CSS, and the Bootstrap framework. The page is fully responsive and works on mobile, tablet, and desktop browsers.",
-      }
+    }
   ]
 };
 
@@ -185,9 +188,8 @@ projects.display = function() {
 
 $("#mapDiv").append(googleMap);
 
-// Call bio, work, projects and education functions
 bio.display();
-work.display();
 projects.display();
+work.display();
 education.display();
 
